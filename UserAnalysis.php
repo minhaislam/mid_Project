@@ -1,4 +1,7 @@
+<?php
+if(isset($_COOKIE['uname'])){
 
+?>
 
 
 <!DOCTYPE html>
@@ -26,3 +29,9 @@ if (isset($_POST['sdays'])) {
 <a href="AdminHome.php">Home</a>
 </body>
 </html>
+<?php
+}
+else{
+	header('location:signin.php');
+}
+?>
