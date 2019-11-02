@@ -1,5 +1,7 @@
 <?php
+if(isset($_COOKIE['uname'])){
 
+?>
 
 
 ?>
@@ -64,3 +66,9 @@
 <a href="AdminHome.php">Home</a>
 </body>
 </html>
+<?php
+}
+else{
+	header('location:signin.php');
+}
+?>
