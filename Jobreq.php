@@ -65,6 +65,9 @@
 			header('location: Jobreq.php');
 		}
 	}
+	if(isset($_COOKIE['uname'])){
+
+?>
 ?>
 
 
@@ -106,3 +109,9 @@
 <a href="AdminHome.php"> Back</a>
 </body>
 </html>
+<?php
+}
+else{
+	header('location:signin.php');
+}
+?>
