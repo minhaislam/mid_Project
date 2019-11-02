@@ -1,4 +1,7 @@
+<?php
+if(isset($_COOKIE['uname'])){
 
+?>
 
 
 <!DOCTYPE html>
@@ -16,7 +19,7 @@
 <?php
 if (isset($_POST['sdays'])) {
 	//echo "<img src="Analytics.jpg" alt="A">";
-	//header('location:Analytic.php');
+	//header('location:Analytics.php');
 ?>
 <?php
 }
@@ -26,3 +29,9 @@ if (isset($_POST['sdays'])) {
 <a href="AdminHome.php">Home</a>
 </body>
 </html>
+<?php
+}
+else{
+	header('location:signin.php');
+}
+?>
