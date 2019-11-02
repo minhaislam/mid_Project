@@ -57,7 +57,7 @@ if(isset($_POST['login'])){
 			<table cellpadding="5px">
 			<tr>
 				<td>
-			User Id<br><input type="email" name="email" value="">
+			Email:<br><input type="email" name="email" value="">
 			</td>
 			</tr>
 			<tr>
