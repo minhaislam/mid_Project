@@ -46,7 +46,10 @@
 			header('location: EditCatagory.php');
 		}
 	}
+	if(isset($_COOKIE['uname'])){
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -99,3 +102,9 @@
 <a href="AdminHome.php"> Back</a>
 </body>
 </html>
+<?php
+}
+else{
+	header('location:signin.php');
+}
+?>
