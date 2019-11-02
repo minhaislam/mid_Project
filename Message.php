@@ -8,6 +8,9 @@ if (isset($_POST['send'])) {
 	fclose($user);
 		header('location: Message.php');
 }
+if(isset($_COOKIE['uname'])){
+
+?>
 ?>
 
 <!DOCTYPE html>
@@ -25,3 +28,9 @@ if (isset($_POST['send'])) {
 <a href="AdminHome.php">Home</a>
 </body>
 </html>
+<?php
+}
+else{
+	header('location:signin.php');
+}
+?>
