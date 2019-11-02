@@ -20,13 +20,13 @@ if(isset($_POST['login'])){
 	
 		if($user[1] == $email && $user[2] == $pass){
 				if($user[4]=='Admin'){
-					setcookie("uname", $user[4], time()+3600, "/");
-			//$_SESSION['uname']=$user[0];
+					setcookie("uname", $user[0], time()+3600, "/");
+			$_SESSION['uname']=$user[0];
 			header('location: AdminHome.php');
 		}
 		elseif($user[4]=='User')
 			{
-				setcookie("uname", $user[4], time()+3600, "/");
+				setcookie("uname", $user[0], time()+3600, "/");
 			$_SESSION['uname']=$user[0];
 			header('location: UserHome.php');
 		}
