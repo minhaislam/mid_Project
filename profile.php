@@ -1,7 +1,9 @@
 <?php
 
 
+if(isset($_COOKIE['uname'])){
 
+?>
 
 ?>
 
@@ -55,3 +57,9 @@
 
 </body>
 </html>
+<?php
+}
+else{
+	header('location:signin.php');
+}
+?>
