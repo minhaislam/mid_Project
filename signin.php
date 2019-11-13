@@ -15,22 +15,30 @@ if(isset($_POST['login'])){
 		$fetch = fread($read, filesize($name));
 	fclose($read);
 	$lines=explode("\n", $fetch);
+	
 	foreach ($lines as $line) {
 		$user = explode("|", $line);
-	
+		
 		if($user[1] == $email && $user[2] == $pass){
+				
 				if($user[4]=='Admin'){
 					setcookie("uname", $user[0], time()+3600, "/");
 			$_SESSION['uname']=$user[0];
 			header('location: AdminHome.php');
+
 		}
+		
+
 		elseif($user[4]=='User')
 			{
 				setcookie("uname", $user[0], time()+3600, "/");
 			$_SESSION['uname']=$user[0];
 			header('location: UserHome.php');
 		}
+		
 		}
+
+
 		
 
 	}	
@@ -51,9 +59,10 @@ if(isset($_POST['login'])){
 	<title></title>
 </head>
 <body>
+	<center>
 	<form method="POST" action="signin.php">
-		<fieldset>	
-			<legend><b>LOG IN</b></legend>
+			
+			<legend><b>LOG IN</b><br><hr width="70"></legend>
 			<table cellpadding="5px">
 			<tr>
 				<td>
@@ -75,11 +84,11 @@ if(isset($_POST['login'])){
 			
 			</table>
 
-		</fieldset>	
+		
 
 
 	</form>
 
-
+</center>
 </body>
 </html>

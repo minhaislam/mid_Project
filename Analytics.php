@@ -19,7 +19,7 @@ if(isset($_COOKIE['uname'])){
 <?php
 if (isset($_POST['sdays'])) {
 	//echo "<img src="Analytics.jpg" alt="A">";
-	//header('location:Analytics.php');
+	//header('location:Analytic.php');
 ?>
 <?php
 }

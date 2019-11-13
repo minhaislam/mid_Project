@@ -11,7 +11,7 @@ if (isset($_POST['send'])) {
 if(isset($_COOKIE['uname'])){
 
 ?>
-?>
+
 
 <!DOCTYPE html>
 <html>

@@ -4,7 +4,7 @@ if(isset($_COOKIE['uname'])){
 ?>
 
 
-?>
+
 
 
 <!DOCTYPE html>

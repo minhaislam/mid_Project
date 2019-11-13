@@ -67,11 +67,12 @@
 
 			return $found;
 		}
+		
 		session_start();
 if(isset($_COOKIE['uname'])){
 
 ?>
-?>
+
 
 
 <!DOCTYPE html>
@@ -82,6 +83,33 @@ if(isset($_COOKIE['uname'])){
 	</title>
 </head>
 <body>
+	<table>
+	<center>
+	<tr>
+						<td width="150px"><h2><i><font color="Red">Freelance</font></i></h2></td>
+						<td  width="100px"><a href="profile.php">Profile</a></td>
+						<td width="100px"><a href="viewinfo.php">View Info</a></td>
+						<td width="100px"><a href="logout.php">Logout</a></td>
+						<td width="100px"><a href="Jobreq.php">Job Requests</a></td>
+						<td width="100px"><a href="FreelancerDetails.php">Freelancer Details</a></td>
+						<td width="100px"><a href="Analytics.php">Analytics</a></td>
+						<td width="100px"><a href="UserAnalysis.php">User Analysis</a></td>
+						<td width="80px"><a href="Message.php">Message</a></td>
+						<td width="100px"><a href="Notification.php">Notificstion</a></td>
+						<td width="80px"><a href="home.php"><img src="a.jpg" width="40px" height="40px"></a>
+						<br>
+						<a href = "logout.php"><h3>LogOut</h3></a></td>
+					</tr>
+					
+					 <tr>
+                        <td colspan="11" style="border-top:4px solid #888;"></td>
+                    </tr>
+					
+		
+	
+	</table></center>
+
+<center>
 	<table border="1">
 		<thead>
 		<tr>
@@ -103,14 +131,11 @@ if(isset($_COOKIE['uname'])){
 	
 	//$fetch = fread($read, filesize('data.txt'));
 	fclose($read);
-
 	$lines=explode("\n", $fetch);
           
         foreach ($lines as $line) {
-
         	if ($line != '' ) {
         		$user = explode("|", $line);		
-
 		
 	?>
 					<tr>
@@ -131,9 +156,11 @@ if(isset($_COOKIE['uname'])){
 
 
 	</table>
+	</center>
 
 	<form method="POST" action="">
-		<fieldset>	
+		<fieldset>	\
+		
 			<legend><b>Edit Info</b></legend>
 			<table cellpadding="5px">
 			<tr>

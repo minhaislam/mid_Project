@@ -12,10 +12,22 @@ if(isset($_POST['signup'])){
 		}
 		elseif ($pass!=$cpass) {
 		echo "password doesn't match";	
-		}
+		} else{
+			if (checkUniqueValue($uname, 'username')) {
+				header('location: Registration.php');
+				//echo "Sorry. This username is already taken.";
+			
+				exit();
+			}
+
+			if (checkUniqueValue($email, 'email')) {
+				header('location: Registration.php');
+				//echo "Sorry. This email has been used already.";
+				exit();
+			}
 		
 
-		else{
+		
             //$_POST['name'] = $name;
 
 			$user = fopen('data.txt', 'a+');
@@ -25,6 +37,36 @@ if(isset($_POST['signup'])){
 		header('location: signin.php');
 	}
 			}
+
+
+			function checkUniqueValue($value, $type){
+			$dataFromUserFile ='data.txt';
+			$read = fopen($dataFromUserFile, 'r');
+	
+			$fetch = fread($read, filesize($dataFromUserFile));
+			
+			$lines=explode("\n", $fetch);
+
+			$found = 0;
+
+			foreach ($lines as $line) {				
+				if (! empty($line)) {
+					$user = explode("|", $line);
+
+					if ($type == 'username') {
+						if($user[0] == $value){
+							$found = 1;
+						}
+					} else {
+						if($user[1] == $value){
+							$found = 1;
+						}
+					}	
+				}
+			}
+
+			return $found;
+		}
 		
 
 	
@@ -43,9 +85,10 @@ if(isset($_POST['signup'])){
 	<title></title>
 </head>
 <body>
+	<center>
 	<form method="POST" action="Registration.php">
-		<fieldset>	
-			<legend><b>REGISTRATION</b></legend>
+			
+			<legend><b>REGISTRATION<br><hr width="150"></b></legend>
 			<table cellpadding="5px">
 			<tr>
 				<td>
@@ -87,7 +130,7 @@ if(isset($_POST['signup'])){
 			
 			</table>
 
-		</fieldset>	
+			
 
 
 	</form>
